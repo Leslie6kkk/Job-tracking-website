@@ -1,4 +1,4 @@
-package leslie.jobrecord;
+package leslie.project.jobrecord;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
