@@ -1,6 +1,7 @@
 package leslie.project.jobrecord.service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -39,6 +40,12 @@ public class JobService {
     public Optional<JobBean> getJobInfo(UUID id){
         return jobRepository.findById(id);
     }
+
+    public List<JobBean> getApplied() {
+        List<JobBean> jobList = jobRepository.findByStatus("applied");
+        return jobList;
+    }
+
 
     public int calculatePercentage(int timeperiod){
         if (timeperiod == 1){

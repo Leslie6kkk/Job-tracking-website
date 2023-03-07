@@ -56,14 +56,14 @@ public class JobController {
         return ResponseEntity.ok(job.get());
     }
 
-//    @GetMapping("/getjoblist")
-//    public List<JobBean> getJobList() {
-//        Optional<JobBean> job = jobService.getJobInfo(UUID.fromString(id));
-//        if (!job.isPresent()) {
-//            return ResponseEntity.notFound().build();
-//        }
-//        return [ResponseEntity.ok(job.get())];
-//    }
+    @GetMapping("/getappliedjobs")
+    public ResponseEntity<List<JobBean>> getAppliedJobs() {
+        List<JobBean> appliedjobs = jobService.getApplied();
+        if (appliedjobs.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(appliedjobs);
+    }
 
 }
 //    @GetMapping("/jobreview")
