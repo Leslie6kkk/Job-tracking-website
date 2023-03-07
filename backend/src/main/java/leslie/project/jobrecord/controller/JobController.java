@@ -6,13 +6,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/jobs")
+@CrossOrigin(origins = "http://localhost:3000")
 public class JobController {
     private final JobService jobService;
 
@@ -58,4 +56,24 @@ public class JobController {
         return ResponseEntity.ok(job.get());
     }
 
+//    @GetMapping("/getjoblist")
+//    public List<JobBean> getJobList() {
+//        Optional<JobBean> job = jobService.getJobInfo(UUID.fromString(id));
+//        if (!job.isPresent()) {
+//            return ResponseEntity.notFound().build();
+//        }
+//        return [ResponseEntity.ok(job.get())];
+//    }
+
 }
+//    @GetMapping("/jobreview")
+//    public List jobreview(int period){
+////    本周/两周/四周/八周/12周/6个月/一年 -- 1，2，3，4，5，6，7
+//        if(period == 1){
+//            //本周
+//
+//        }
+//        return [23,23];
+//    }
+//
+//}
